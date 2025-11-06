@@ -1,0 +1,37 @@
+{
+  "name": "partner-confirmation-automation",
+  "version": "1.0.0",
+  "description": "Partner Confirmation Automation System using AWS CDK",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "cdk:synth": "cdk synth",
+    "cdk:deploy": "cdk deploy --all",
+    "cdk:destroy": "cdk destroy --all",
+    "cdk:diff": "cdk diff",
+    "seed": "ts-node bin/seed-data.ts"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "serverless",
+    "partner-confirmation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.925.0",
+    "@aws-sdk/client-lex-runtime-v2": "^3.925.0",
+    "@aws-sdk/lib-dynamodb": "^3.925.0",
+    "aws-cdk-lib": "^2.222.0",
+    "constructs": "^10.4.2",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
