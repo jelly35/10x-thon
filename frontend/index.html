@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객 문의 - 파트너 확인 시스템</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>고객 문의</h1>
+            <p>예약 관련 문의사항을 입력해주세요</p>
+        </header>
+
+        <main>
+            <form id="inquiryForm">
+                <div class="form-group">
+                    <label for="reservationNumber">예약번호 *</label>
+                    <input type="text" id="reservationNumber" name="reservationNumber" placeholder="예: RES-2024-001"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">고객 연락처 *</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" placeholder="예: 010-1234-5678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">문의 내용 *</label>
+                    <textarea id="message" name="message" rows="5" placeholder="예: 예약 시간을 변경하고 싶습니다"
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">문의 제출</button>
+            </form>
+
+            <div id="statusMessage" class="status-message hidden"></div>
+
+            <div id="notificationArea" class="notification-area hidden">
+                <h2>알림</h2>
+                <div id="notificationContent"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

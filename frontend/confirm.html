@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파트너 확인 - 파트너 확인 시스템</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>파트너 확인</h1>
+            <p>고객 요청을 확인하고 응답해주세요</p>
+        </header>
+
+        <main>
+            <div id="loadingArea" class="loading-area">
+                <div class="loading-spinner"></div>
+                <p>요청 정보를 불러오는 중...</p>
+            </div>
+
+            <div id="confirmArea" class="confirm-area hidden">
+                <div class="request-info">
+                    <h2>고객 요청 정보</h2>
+
+                    <div class="info-item">
+                        <label>예약번호</label>
+                        <div id="reservationNumber" class="info-value"></div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>예약일시</label>
+                        <div id="reservationDate" class="info-value"></div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>문의 유형</label>
+                        <div id="intent" class="info-value"></div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>고객 문의 내용</label>
+                        <div id="customerQuery" class="info-value query-text"></div>
+                    </div>
+                </div>
+
+                <div class="response-section">
+                    <h2>응답 선택</h2>
+                    <p class="response-instruction">아래 옵션 중 하나를 선택해주세요</p>
+
+                    <form id="responseForm">
+                        <div class="response-options">
+                            <button type="button" class="response-btn accept-btn" data-response="accept">
+                                <span class="btn-icon">✓</span>
+                                <span class="btn-text">수락</span>
+                                <span class="btn-desc">요청을 승인합니다</span>
+                            </button>
+
+                            <button type="button" class="response-btn reject-btn" data-response="reject">
+                                <span class="btn-icon">✗</span>
+                                <span class="btn-text">거절</span>
+                                <span class="btn-desc">요청을 거절합니다</span>
+                            </button>
+
+                            <button type="button" class="response-btn alternative-btn" data-response="alternative">
+                                <span class="btn-icon">📅</span>
+                                <span class="btn-text">대안 제안</span>
+                                <span class="btn-desc">다른 시간을 제안합니다</span>
+                            </button>
+                        </div>
+
+                        <div id="alternativeTimeSection" class="alternative-time-section hidden">
+                            <label for="alternativeTime">대안 시간</label>
+                            <input type="datetime-local" id="alternativeTime" name="alternativeTime">
+                            <p class="field-hint">고객에게 제안할 대안 시간을 선택해주세요</p>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn-primary submit-btn hidden">
+                            응답 제출
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="statusMessage" class="status-message hidden"></div>
+        </main>
+    </div>
+
+    <script src="confirm.js"></script>
+</body>
+
+</html>
